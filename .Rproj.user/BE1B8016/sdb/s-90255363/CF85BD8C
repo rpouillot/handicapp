@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "server <- TRUE\nif(!server){\n  setwd(\"C:\\\\Users\\\\Widjeuss\\\\Documents\\\\R\\\\Handicap\")\n  library(readxl)\n  data <- read_excel(\"Export-etalab_handicap01032017.xlsx\")\n  dataH <- subset(data,!is.na(lat)) \n  saveRDS(dataH,\"data/dataH\")\n}\n \nrm(list=ls())\ndataH <- readRDS(\"data/dataH\")\n\nActivite <- levels(factor(dataH$ACTIVITE))\n\nlibrary(shiny)\nlibrary(leaflet)\nlibrary(RColorBrewer)\nlibrary(shinythemes)\nlibrary(DT)\n\ndataH$Courriel <- paste0(\"<a href=mailto:\",dataH$EMAILCONTACT,\">\",dataH$EMAILCONTACT,\"</a>\")\ndataH$Site <- paste0(\"<a href=http://\",dataH$SITEWEB,\">\",dataH$SITEWEB,\"</a>\")\n# library(rsconnect)\n# rsconnect::setAccountInfo(name='rpouillot',\n#                          token='4B05757F4EB82E1230B609C9AFCE57DA',\n#                          secret='fYdxW/id9CmN5zoVnoAuVoeTXF1TsrR/lOQBL6H1')\n# deployApp()",
+    "created" : 1523890014488.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3068796269",
+    "id" : "CF85BD8C",
+    "lastKnownWriteTime" : 1523908679,
+    "last_content_update" : 1523908679753,
+    "path" : "~/Handicapp/global.r",
+    "project_path" : "global.r",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
