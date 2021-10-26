@@ -2,7 +2,8 @@
 
 #load ggmap
 library(ggmap)
-register_google(key = "AIzaSyBG0bWGqNwtb80-BGCearupg4Sf6hqIUno", write=TRUE)
+myKey <- readLines(con=file("myKey.txt"))
+register_google(key = myKey)
 
 setwd("C:\\Users\\PouillotRegis\\OneDrive\\HandicApp")
 data <- read_excel("tourisme-handicap-etablissements-05052020.xlsx")

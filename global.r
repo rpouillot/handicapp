@@ -22,8 +22,3 @@ library(DT)
 
 dataH$Courriel <- paste0("<a href=mailto:",dataH$EMAILCONTACT,">",dataH$EMAILCONTACT,"</a>")
 dataH$Site <- paste0("<a href=http://",dataH$SITEWEB,">",dataH$SITEWEB,"</a>")
-# library(rsconnect)
-# rsconnect::setAccountInfo(name='rpouillot',
-#                          token='4B05757F4EB82E1230B609C9AFCE57DA',
-#                          secret='fYdxW/id9CmN5zoVnoAuVoeTXF1TsrR/lOQBL6H1')
-# deployApp()
